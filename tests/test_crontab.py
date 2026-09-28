@@ -20,7 +20,7 @@ class ReadCrontabTest(SimpleTestCase):
         crontab.read()
 
         mock_run.assert_called_with(
-            ['/usr/bin/crontab', '-l'], capture_output=True, text=True, check=False
+            ['/usr/bin/crontab', '-l'], capture_output=True, text=True
         )
         self.assertEqual([], crontab.crontab_lines)
 

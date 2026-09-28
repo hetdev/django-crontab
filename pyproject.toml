@@ -42,8 +42,5 @@ Issues = "https://github.com/kraiz/django-crontab/issues"
 [tool.setuptools.packages.find]
 include = ["django_crontab*"]
 
-[tool.ruff]
-line-length = 120
-
 [tool.ruff.lint]
 select = ["E4", "E7", "E9", "F", "I", "UP024", "UP004", "UP039"]

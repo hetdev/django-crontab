@@ -49,7 +49,6 @@ class Crontab:
             [self.settings.CRONTAB_EXECUTABLE, '-l'],
             capture_output=True,
             text=True,
-            check=False,
         )
         self.crontab_lines = result.stdout.splitlines(keepends=True)
 
@@ -65,7 +64,7 @@ class Crontab:
                 for line in self.crontab_lines:
                     tmp.write(line)
             # replace the crontab with the temporary file
-            subprocess.run([self.settings.CRONTAB_EXECUTABLE, path], check=False)
+            subprocess.run([self.settings.CRONTAB_EXECUTABLE, path])
         finally:
             # delete the temporary file
             os.unlink(path)
